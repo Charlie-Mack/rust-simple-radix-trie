@@ -192,41 +192,6 @@ fn main() {
 
     let mut big_trie = Node::new();
 
-    // for nibble in NIBBLE_TO_HEX.iter().enumerate() {
-    //     let key = format!("{:x}", nibble.0);
-    //     println!("{}", key);
-    //     big_trie.insert(&key, format!("leaf-{:x}", nibble.0));
-
-    //     for nibble2 in NIBBLE_TO_HEX.iter().enumerate() {
-    //         let key2 = format!("{:x}{:x}", nibble.0, nibble2.0);
-    //         big_trie.insert(&key2, format!("leaf-{:x}{:x}", nibble.0, nibble2.0));
-
-    //         for nibble3 in NIBBLE_TO_HEX.iter().enumerate() {
-    //             let key3 = format!("{:x}{:x}{:x}", nibble.0, nibble2.0, nibble3.0);
-    //             // println!("{}", key3);
-    //             big_trie.insert(
-    //                 &key3,
-    //                 format!("leaf-{:x}{:x}{:x}", nibble.0, nibble2.0, nibble3.0),
-    //             );
-    //         }
-    //     }
-    // }
-
-    // for a in 0..16 {
-    //     let k1 = format!("{:x}", a);
-    //     big_trie.insert(&k1, format!("leaf-{}", k1));
-
-    //     for b in 0..16 {
-    //         let k2 = format!("{:x}{:x}", a, b);
-    //         big_trie.insert(&k2, format!("leaf-{}", k2));
-
-    //         for c in 0..16 {
-    //             let k3 = format!("{:x}{:x}{:x}", a, b, c);
-    //             big_trie.insert(&k3, format!("leaf-{}", k3));
-    //         }
-    //     }
-    // }
-
     let start = Instant::now();
     for a in 0..16_i32.pow(6) {
         // convert number -> nibbles directly, no strings
@@ -243,7 +208,6 @@ fn main() {
     }
     let duration = start.elapsed();
 
-    // println!("{}", big_trie);
+    println!("{}", big_trie);
     println!("Time taken: {:?}", duration);
-    // println!("{:?}", big_trie.get("fff").unwrap());
 }
